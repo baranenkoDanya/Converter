@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Converter
 {
@@ -157,7 +155,7 @@ namespace Converter
             double result = 0;
             for (int i = 0; i < input.Length; i++)
             {
-                switch (input[i].ToString())
+                switch (input[i].ToString().ToUpper())
                 {
                     case "A":
                         result += Math.Pow(16, power) * 10;
@@ -178,7 +176,7 @@ namespace Converter
                         result += Math.Pow(16, power) * 15;
                         break;
                     default:
-                        result += Math.Pow(16, power) * Convert.ToInt32(input[i].ToString());
+                        result += Math.Pow(16, power) * Convert.ToInt32(input[i].ToString().ToUpper());
                         break;
                 }
                 power--;
