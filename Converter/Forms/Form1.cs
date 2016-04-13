@@ -10,6 +10,7 @@ namespace Converter
             InitializeComponent();
             comboBox1.SelectedIndex = 2;
             comboBox2.SelectedIndex = 0;
+            Input.Text = Output.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -20,6 +21,7 @@ namespace Converter
                 temp = Instruments.Choice(Convert.ToInt32(comboBox1.SelectedItem), Convert.ToInt32(comboBox2.SelectedItem), Input.Text);
                 Output.Text = temp;
             }
+
             label4.Text = "Output base " + comboBox2.SelectedItem.ToString() + " value:";
         }
 
@@ -37,6 +39,11 @@ namespace Converter
             var tmp = comboBox1.SelectedIndex;
             comboBox1.SelectedIndex = comboBox2.SelectedIndex;
             comboBox2.SelectedIndex = tmp;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button1_Click(sender,e);
         }
     }
 }

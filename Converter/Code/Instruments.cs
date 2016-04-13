@@ -44,15 +44,15 @@ namespace Converter
                 {
                     if (to == 8)
                     {
-                        output = Solution.DecimalToOctal(Solution.BinaryToDecimal(input));
+                        output = IntegerSolution.DecimalToOctal(IntegerSolution.BinaryToDecimal(input));
                     }
                     else if (to == 10)
                     {
-                        output = Solution.BinaryToDecimal(input);
+                        output = IntegerSolution.BinaryToDecimal(input);
                     }
                     else if (to == 16)
                     {
-                        output = Solution.DecimalToHexa(Solution.BinaryToDecimal(input));
+                        output = IntegerSolution.DecimalToHexa(IntegerSolution.BinaryToDecimal(input));
                     }
                     break;
                 }
@@ -60,15 +60,15 @@ namespace Converter
                 {
                     if (to == 2)
                     {
-                        output = Solution.DecimalToBinary(Solution.OctalToDecimal(input));
+                        output = IntegerSolution.DecimalToBinary(IntegerSolution.OctalToDecimal(input));
                     }
                     else if (to == 10)
                     {
-                        output = Solution.OctalToDecimal(input);
+                        output = IntegerSolution.OctalToDecimal(input);
                     }
                     else if (to == 16)
                     {
-                        output = Solution.DecimalToHexa(Solution.OctalToDecimal(input));
+                        output = IntegerSolution.DecimalToHexa(IntegerSolution.OctalToDecimal(input));
                     }
                     break;
                 }
@@ -76,15 +76,15 @@ namespace Converter
                 {
                     if (to == 2)
                     {
-                        output = Solution.DecimalToBinary(input);
+                        output = IntegerSolution.DecimalToBinary(input);
                     }
                     else if (to == 8)
                     {
-                        output = Solution.DecimalToOctal(input);
+                        output = IntegerSolution.DecimalToOctal(input);
                     }
                     else if (to == 16)
                     {
-                        output = Solution.DecimalToHexa(input);
+                        output = IntegerSolution.DecimalToHexa(input);
                     }
                     break;
                 }
@@ -92,15 +92,15 @@ namespace Converter
                 {
                     if (to == 2)
                     {
-                        output = Solution.DecimalToBinary(Solution.HexaToDecimal(input));
+                        output = IntegerSolution.DecimalToBinary(IntegerSolution.HexaToDecimal(input));
                     }
                     else if (to == 8)
                     {
-                        output = Solution.DecimalToOctal(Solution.HexaToDecimal(input));
+                        output = IntegerSolution.DecimalToOctal(IntegerSolution.HexaToDecimal(input));
                     }
                     else if (to == 10)
                     {
-                        output = Solution.HexaToDecimal(input);
+                        output = IntegerSolution.HexaToDecimal(input);
                     }
                     break;
                 }

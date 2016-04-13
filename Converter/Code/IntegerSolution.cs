@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Converter
 {
-    public class Solution
+    public class IntegerSolution
     {
-        // int values
+        // int values - division method
         public static string DecimalToBinary(string input)
         {
             int intInput;
@@ -184,6 +184,5 @@ namespace Converter
             return result.ToString();
         }
 
-        // fractional values
     }
 }
