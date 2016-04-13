@@ -16,5 +16,24 @@ namespace Converter
             }
             return res;
         }
+
+        public static string StringReverce(string input)
+        {
+            string output = "";
+            for (int i = input.Length; i >= 0; i--)
+            {
+                output += input[i].ToString();
+            }
+            return output;
+        }
+
+        public static bool isInt(string input)
+        {
+            if (!input.Contains(',') || !input.Contains('.'))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

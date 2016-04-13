@@ -18,7 +18,11 @@ namespace Converter
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Output.Text = Solution.DecimalToBinary(Input.Text);
+            string temp = ""; 
+            if (Instruments.isInt(Input.Text))
+            {
+                
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -26,5 +30,6 @@ namespace Converter
             label3.Text = "";
             label3.Text += "Input base " + comboBox1.SelectedItem.ToString() + " value:";
         }
+        
     }
 }
