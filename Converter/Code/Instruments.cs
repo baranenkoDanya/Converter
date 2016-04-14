@@ -25,16 +25,7 @@ namespace Converter
             return output;
         }
 
-        public static bool IsInt(string input)
-        {
-            if (!input.Contains(',') || !input.Contains('.'))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public static string Choice(int from, int to, string input)
+        public static string IntChoice(int from, int to, string input)
         {
             string output = "";
             if (from == to) return input;
@@ -107,5 +98,89 @@ namespace Converter
             }
             return output;
         }
+
+        public static string FractChoice(int from, int to, string input)
+        {
+            string output = "";
+            if (from == to) return input;
+            switch (from)
+            {
+                case 2:
+                    {
+                        if (to == 8)
+                        {
+                            output = FractionalSolution.DecimalToOctal(FractionalSolution.BinaryToDecimal(input));
+                            FractionalSolution.MakeDigitZero();
+                        }
+                        else if (to == 10)
+                        {
+                            output = FractionalSolution.BinaryToDecimal(input);
+                            FractionalSolution.MakeDigitZero();
+                        }
+                        else if (to == 16)
+                        {
+                            output = FractionalSolution.DecimalToHexa(FractionalSolution.BinaryToDecimal(input));
+                            FractionalSolution.MakeDigitZero();
+                        }
+                        break;
+                    }
+                case 8:
+                    {
+                        if (to == 2)
+                        {
+                            output = FractionalSolution.DecimalToBinary(FractionalSolution.OctalToDecimal(input));
+                            FractionalSolution.MakeDigitZero();
+                        }
+                        else if (to == 10)
+                        {
+                            output = FractionalSolution.OctalToDecimal(input);
+                            FractionalSolution.MakeDigitZero();
+                        }
+                        else if (to == 16)
+                        {
+                            output = FractionalSolution.DecimalToHexa(FractionalSolution.OctalToDecimal(input));
+                            FractionalSolution.MakeDigitZero();
+                        }
+                        break;
+                    }
+                case 10:
+                    {
+                        if (to == 2)
+                        {
+                            output = FractionalSolution.DecimalToBinary(input);
+                        }
+                        else if (to == 8)
+                        {
+                            output = FractionalSolution.DecimalToOctal(input);
+                        }
+                        else if (to == 16)
+                        {
+                            output = FractionalSolution.DecimalToHexa(input);
+                        }
+                        break;
+                    }
+                case 16:
+                    {
+                        if (to == 2)
+                        {
+                            output = FractionalSolution.DecimalToBinary(FractionalSolution.HexaToDecimal(input));
+                            FractionalSolution.MakeDigitZero();
+                        }
+                        else if (to == 8)
+                        {
+                            output = FractionalSolution.DecimalToOctal(FractionalSolution.HexaToDecimal(input));
+                            FractionalSolution.MakeDigitZero();
+                        }
+                        else if (to == 10)
+                        {
+                            output = FractionalSolution.HexaToDecimal(input);
+                            FractionalSolution.MakeDigitZero();
+                        }
+                        break;
+                    }
+            }
+            return output;
+        }
+
     }
 }
