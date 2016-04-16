@@ -17,24 +17,31 @@ namespace Converter
         {
             try
             {
-                string temp = "";
-                if (!Input.Text.Contains("."))
+                if (!Input.Text.ToString().Contains("-"))
                 {
-                    temp = Instruments.IntChoice(Convert.ToInt32(comboBox1.SelectedItem),
-                        Convert.ToInt32(comboBox2.SelectedItem), Input.Text);
+                    string temp = "";
+                    if (!Input.Text.Contains("."))
+                    {
+                        temp = Instruments.IntChoice(Convert.ToInt32(comboBox1.SelectedItem),
+                            Convert.ToInt32(comboBox2.SelectedItem), Input.Text);
+                    }
+                    else if (Input.Text[0].ToString() == "0" & Input.Text[1].ToString() == ".")
+                    {
+                        temp = Instruments.FractChoice(Convert.ToInt32(comboBox1.SelectedItem),
+                            Convert.ToInt32(comboBox2.SelectedItem), Input.Text);
+                    }
+                    else if (Input.Text[0].ToString() != "0" & Input.Text.Contains("."))
+                    {
+                        temp = MixedSolution.MixedInput(Convert.ToInt32(comboBox1.SelectedItem),
+                            Convert.ToInt32(comboBox2.SelectedItem), Input.Text);
+                    }
+                    Output.Text = temp;
+                    label4.Text = "Output base " + comboBox2.SelectedItem.ToString() + " value:";
                 }
-                else if (Input.Text[0].ToString() == "0" & Input.Text[1].ToString() == ".")
+                else
                 {
-                    temp = Instruments.FractChoice(Convert.ToInt32(comboBox1.SelectedItem),
-                        Convert.ToInt32(comboBox2.SelectedItem), Input.Text);
+                    MessageBox.Show("You can only use positive values");
                 }
-                else if (Input.Text[0].ToString() != "0" & Input.Text.Contains("."))
-                {
-                    temp = MixedSolution.MixedInput(Convert.ToInt32(comboBox1.SelectedItem),
-                        Convert.ToInt32(comboBox2.SelectedItem), Input.Text);
-                }
-                Output.Text = temp;
-                label4.Text = "Output base " + comboBox2.SelectedItem.ToString() + " value:";
             }
             catch (Exception ex)
             {
